@@ -11,6 +11,7 @@ import org.junit.runners.Parameterized;
 public class ParameterizedLionTest {
 
     private final String sex;
+    Feline feline;
     private final boolean expectedHasMane;
 
     public ParameterizedLionTest(String sex, boolean expectedHasMane) {
@@ -31,7 +32,7 @@ public class ParameterizedLionTest {
     @Test
     public void doesHaveManeLionValue() throws Exception {
 
-        Lion lion = new Lion(sex);
+        Lion lion = new Lion(sex,feline );
 
         boolean actualHasMane = lion.doesHaveMane();
 

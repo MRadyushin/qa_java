@@ -21,7 +21,7 @@ public class LionTest {
     @Test
     public void getKittensLionValue() throws Exception {
 
-        Lion lion = new Lion("Самец");
+        Lion lion = new Lion("Самец",feline );
 
         Mockito.when(feline.getKittens()).thenReturn(1);
 
@@ -35,7 +35,7 @@ public class LionTest {
     @Test
     public void getFoodLionValue() throws Exception {
 
-        Lion lion = new Lion("Самка");
+        Lion lion = new Lion("Самка", feline);
 
         Mockito.when(feline.getFood("Хищник")).thenReturn(List.of("Животные", "Птицы", "Рыба"));
 
