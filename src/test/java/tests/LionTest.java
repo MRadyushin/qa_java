@@ -16,14 +16,14 @@ import java.util.List;
 public class LionTest {
 
     @Mock
-    Feline feline;
+    Kittens kittens;
 
     @Test
     public void getKittensLionValue() throws Exception {
 
-        Lion lion = new Lion("Самец",feline );
+        Lion lion = new Lion("Самец", kittens );
 
-        Mockito.when(feline.getKittens()).thenReturn(1);
+        Mockito.when(kittens.getKittens()).thenReturn(1);
 
         int expectCount = 1;
         int actualCount = lion.getKittens();
@@ -35,9 +35,9 @@ public class LionTest {
     @Test
     public void getFoodLionValue() throws Exception {
 
-        Lion lion = new Lion("Самка", feline);
+        Lion lion = new Lion("Самка", kittens);
 
-        Mockito.when(feline.getFood("Хищник")).thenReturn(List.of("Животные", "Птицы", "Рыба"));
+        Mockito.when(kittens.getFood("Хищник")).thenReturn(List.of("Животные", "Птицы", "Рыба"));
 
         List<String> expectedFood = List.of("Животные", "Птицы", "Рыба");
         List<String> actualFood = lion.getFood();
