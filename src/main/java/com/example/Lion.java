@@ -4,10 +4,10 @@ import java.util.List;
 
 public class Lion implements Kittens {
 
-    Kittens kittens;
+    Feline feline;
     boolean hasMane;
 
-    public Lion(String sex, Kittens kittens) throws Exception {
+    public Lion(String sex, Feline feline) throws Exception {
         if ("Самец".equals(sex)) {
             hasMane = true;
         } else if ("Самка".equals(sex)) {
@@ -15,23 +15,21 @@ public class Lion implements Kittens {
         } else {
             throw new Exception("Используйте допустимые значения пола животного - самец или самка");
         }
-        this.kittens = kittens;
+        this.feline = feline;
     }
 
     public int getKittens() {
-        return kittens.getKittens();
+        return feline.getKittens();
     }
 
-    @Override
-    public List<String> getFood(String animalKind) throws Exception {
-        return kittens.getFood("Хищник");
-    }
+
 
     public boolean doesHaveMane() {
         return hasMane;
     }
 
+
     public List<String> getFood() throws Exception {
-        return kittens.getFood("Хищник");
+        return feline.getFood("Хищник");
     }
 }
